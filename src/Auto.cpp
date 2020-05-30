@@ -1,22 +1,24 @@
-#include "Auto.h"
 #include<iostream>
+#include "Auto.h"
+#include "Lista.h"
 
 using namespace std;
-
 
 Auto::Auto(){
 }
 
-
-Auto::Auto(int modelo, string marca, string patente, float precio){
+Auto::Auto(int modelo, string marca, string patente, float precio, Lista<string> caracteristicas){
   this->modelo = modelo;
   this->marca = marca;
   this->patente = patente;
   this->precio = precio;
+  this->caracteristicas = caracteristicas;
 }
 
 // Destructor
-Auto::~Auto() {}
+Auto::~Auto() {
+    caracteristicas.~Lista();
+}
 
 // Observadoras
 int Auto::obtener_modelo() const {
@@ -35,21 +37,31 @@ float Auto::obtener_precio() const {
   return precio;
 }
 
+void Auto::listarCaracteristicas() {
+    cout << "\t..:Caracteristicas:.." << endl;
+    for (int i=0; i < caracteristicas.logitud(); i++)
+        cout << "\t\t- " << caracteristicas.obtener(i) << endl;
+}
+
 // Modificadoras
 void Auto::modificar_modelo(int modelo) {
-  this->modelo = modelo;
+    this->modelo = modelo;
 }
 
 void Auto::modificar_marca(string marca) {
-  this->marca = marca;
+    this->marca = marca;
 }
 
 void Auto::modificar_patente(string patente) {
-  this->patente = patente;
+    this->patente = patente;
 }
 
 void Auto::modificar_precio(float precio) {
-  this->precio = precio;
+    this->precio = precio;
+}
+
+void Auto::agregarCaracteristica(string caracteristica) {
+    this->caracteristicas.agregar(caracteristica, caracteristicas.logitud());
 }
 
 bool Auto::operator>=(const Auto & otroAuto) const {

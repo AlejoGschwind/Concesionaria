@@ -31,3 +31,36 @@
 	"Nodo.h"
 	<iostream>
 
+1590869919 source:/home/alejo/cpp/TPES/concesionaria/src/Arbol.cpp
+	<iostream>
+	<typeinfo>
+	"Arbol.h"
+
+1590869901 /home/alejo/cpp/TPES/concesionaria/include/Arbol.h
+	"Nodo.h"
+
+1590860014 /home/alejo/cpp/TPES/concesionaria/include/Nodo.h
+
+1590860402 source:/home/alejo/cpp/TPES/concesionaria/src/Lista.cpp
+	"Lista.h"
+	<iostream>
+	<cassert>
+
+1590857301 /home/alejo/cpp/TPES/concesionaria/include/Lista.h
+
+1590874405 source:/home/alejo/cpp/TPES/concesionaria/main.cpp
+	<iostream>
+	<fstream>
+	"Auto.h"
+	"Arbol.h"
+	"Lista.h"
+	"Nodo.h"
+
+1590874432 /home/alejo/cpp/TPES/concesionaria/include/Auto.h
+	<iostream>
+	"Lista.h"
+
+1590863051 source:/home/alejo/cpp/TPES/concesionaria/src/Nodo.cpp
+	"Nodo.h"
+	<iostream>
+

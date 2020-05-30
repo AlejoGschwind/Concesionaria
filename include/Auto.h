@@ -8,19 +8,24 @@ using namespace std;
 class Auto{
     public:
         Auto();
-        Auto(int,string,string,float);
+        Auto(int modelo, string marca, string patente, float precio, Lista<string> caracteristicas);
         ~Auto();
-        int obtener_modelo()const;
-        string obtener_patente()const;
-        string obtener_marca()const;
-        float obtener_precio()const;
-        //string Listar_Caracteristicas();
+
+        // Observadoras.
+        int obtener_modelo() const;
+        string obtener_patente() const;
+        string obtener_marca() const;
+        float obtener_precio() const;
+        void listarCaracteristicas();
+
+        // Modificadoras.
         void modificar_modelo(int modelo);
         void modificar_marca(string marca);
         void modificar_patente(string patente);
         void modificar_precio(float precio);
+        void agregarCaracteristica(string caracteristica);
 
-        // Operadores de comparacion a1 == a2
+        // Operadores de comparacion.
         bool operator>=(const Auto & otroAuto) const;
         bool operator<(const Auto & otroAuto) const;
         bool operator==(const Auto & otroAuto) const;

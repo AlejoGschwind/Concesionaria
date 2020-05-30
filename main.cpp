@@ -118,7 +118,7 @@ void procesar_archivo_entrada(string origen)
                 //TO DO: Nueva caracteristica encontrada.
                 // cout << "  - " << caracteristica << endl;
             }
-            Auto a = Auto(modelo, marca, patente, precio);
+            //Auto a = Auto(modelo, marca, patente, precio);
             //autos.agregar(a);
 
         }

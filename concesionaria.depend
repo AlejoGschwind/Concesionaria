@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1590869320 source:/home/alejo/cpp/TPES/trabajito/src/Auto.cpp
+	"Auto.h"
+	<iostream>
+
+1590869340 /home/alejo/cpp/TPES/trabajito/include/Auto.h
+	<iostream>
+	"Lista.h"
+
+1590857301 /home/alejo/cpp/TPES/trabajito/include/Lista.h
+
+1590860402 source:/home/alejo/cpp/TPES/trabajito/src/Lista.cpp
+	"Lista.h"
+	<iostream>
+	<cassert>
+
+1590866470 source:/home/alejo/cpp/TPES/trabajito/main.cpp
+	<iostream>
+	<fstream>
+	"Auto.h"
+	"Arbol.h"
+	"Lista.h"
+	"Nodo.h"
+
+1590869901 /home/alejo/cpp/TPES/trabajito/include/Arbol.h
+	"Nodo.h"
+
+1590860014 /home/alejo/cpp/TPES/trabajito/include/Nodo.h
+
+1590863051 source:/home/alejo/cpp/TPES/trabajito/src/Nodo.cpp
+	"Nodo.h"
+	<iostream>
+

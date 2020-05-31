@@ -8,7 +8,7 @@ using namespace std;
 class Auto{
     public:
         Auto();
-        Auto(int modelo, string marca, string patente, float precio, Lista<string> caracteristicas);
+        Auto(int modelo, string marca, string patente, float precio, Lista<string> * lCarac);
         ~Auto();
 
         // Observadoras.
@@ -16,7 +16,8 @@ class Auto{
         string obtener_patente() const;
         string obtener_marca() const;
         float obtener_precio() const;
-        void listarCaracteristicas();
+        void listarCaracteristicas() const;
+        void imprimir() const;
 
         // Modificadoras.
         void modificar_modelo(int modelo);
@@ -29,12 +30,13 @@ class Auto{
         bool operator>=(const Auto & otroAuto) const;
         bool operator<(const Auto & otroAuto) const;
         bool operator==(const Auto & otroAuto) const;
+        friend ostream& operator<<(ostream& os, const Auto & a);
     private:
         int modelo;
         string patente;
         string marca;
         float precio;
-        Lista<string> caracteristicas;
+        Lista<string> * caracteristicas;
 };
 
 #endif // AUTO_H_INCLUDED

@@ -10,14 +10,14 @@ class Arbol {
 
         void vaciarArbol(Nodo<T> *&cursor);
 
-        void insertarArbol(Nodo<T> *&cursor, Nodo<T> * aAgregar);
+        Nodo<T> * insertarArbol(Nodo<T> *&cursor, Nodo<T> *&aAgregar);
 
         void enOrden(Nodo<T> * cursor);
     public:
         Arbol();   // Constructor
         ~Arbol();  // Destructor
 
-        void insertar(T elem);
+        Nodo<T> * insertar(T elem);
 
         void mostrarEnOrden();
 

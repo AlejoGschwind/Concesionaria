@@ -1,6 +1,7 @@
 #include <iostream>
 #include <typeinfo>
 #include "Arbol.h"
+#include "Auto.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ Arbol<T>::Arbol() {
 template <typename T>
 Arbol<T>::~Arbol() {
     vaciarArbol(raiz);
+    raiz = NULL;
 }
 
 /// PRIVADOS
@@ -33,10 +35,11 @@ void Arbol<T>::vaciarArbol(Nodo<T> *&cursor) {
  * Inserta Nodo ordenado al Arbol.
  */
 template <typename T>
-void Arbol<T>::insertarArbol(Nodo<T> *&cursor, Nodo<T> * aAgregar) {
-    if ( cursor == NULL )
+Nodo<T> * Arbol<T>::insertarArbol(Nodo<T> *&cursor, Nodo<T> *&aAgregar) {
+    if ( cursor == NULL ) {
         cursor = aAgregar;
-    else
+        return cursor;
+    } else
         if ( cursor->elem >= aAgregar->elem )
             insertarArbol(cursor->izq, aAgregar);
         else
@@ -54,12 +57,12 @@ void Arbol<T>::enOrden(Nodo<T> * cursor) {
 
 /// PUBLICOS
 template <typename T>
-void Arbol<T>::insertar(T elem) {
-    Nodo<T> * nuevo = new Nodo<T>();
+Nodo<T> * Arbol<T>::insertar(T elem) {
+    Nodo<T> * nuevo = new Nodo<T>;
     nuevo->elem = elem;
     nuevo->izq = NULL;
     nuevo->der = NULL;
-    insertarArbol(raiz, nuevo);
+    return insertarArbol(raiz, nuevo);
 }
 
 template <typename T>
@@ -73,3 +76,4 @@ Nodo<T> * Arbol<T>::obtenerRaiz() {
 }
 
 template class Arbol<int>;
+template class Arbol<Auto>;

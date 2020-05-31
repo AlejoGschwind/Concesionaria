@@ -12,7 +12,7 @@ Lista<T>::Lista() {
 
 template <typename T>
 Lista<T>::~Lista() {
-    vaciarLista(primero);
+    vaciarLista();
 }
 
 /// Privados
@@ -21,11 +21,14 @@ Lista<T>::~Lista() {
  * Vacia la lista por compelo.
  */
 template <typename T>
-void Lista<T>::vaciarLista( Nodo *& cursor) {
-    if ( cursor != NULL ) {
-        vaciarLista(cursor->sig);
-        delete cursor;
+void Lista<T>::vaciarLista() {
+    Nodo * cursor;
+    while ( primero != NULL ) {
+        cursor = primero->sig;
+        delete primero;
+        primero = cursor;
     }
+    primero = NULL;
 }
 
 /**
@@ -46,12 +49,21 @@ void Lista<T>::insertarLista(Nodo *&cursor, Nodo * aAgregar, int pos) {
     }
 }
 
+template <typename T>
+void Lista<T>::impirmir() const {
+    Nodo * cursor = primero;
+    while ( cursor != NULL) {
+        cout << cursor->elem << endl;
+        cursor = cursor->sig;
+    }
+}
+
 /**
  * Retorna el elemento de determinada posicion.
  * (pos >=0 and < cant)
  */
 template <typename T>
-T Lista<T>::obtenerElemento(const Nodo * cursor, int pos) {
+T Lista<T>::obtenerElemento(const Nodo * cursor, int pos) const {
     if ( pos == 0 )
         return cursor->elem;
     else
@@ -63,7 +75,7 @@ T Lista<T>::obtenerElemento(const Nodo * cursor, int pos) {
  */
 template <typename T>
 typename Lista<T>::Nodo * Lista<T>::crearNodo(T elem) {
-    Nodo * nuevo = new Nodo;
+    Nodo * nuevo = new Nodo();
     nuevo->elem = elem;
     nuevo->sig = NULL;
     return nuevo;
@@ -88,7 +100,7 @@ void Lista<T>::agregar(T elem, int pos) {
  * Devuelve la logitud de la lista.
  */
 template <typename T>
-int Lista<T>::logitud() {
+int Lista<T>::logitud() const {
     return cant;
 }
 
@@ -97,7 +109,7 @@ int Lista<T>::logitud() {
  * Devuelve el elemento de la posicion pasada por paramentro.
  */
 template <typename T>
-T Lista<T>::obtener(int pos) {
+T Lista<T>::obtener(int pos) const {
     assert(pos>=0 and pos< cant); /// Error: pos invalida.
     return obtenerElemento(primero, pos);
 }

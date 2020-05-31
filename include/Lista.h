@@ -9,11 +9,11 @@ class Lista {
             Nodo * sig;
         };
 
-        void vaciarLista( Nodo *& cursor);
+        void vaciarLista();
 
         void insertarLista(Nodo *&cursor, Nodo * aAgregar, int pos);
 
-        T obtenerElemento(const Nodo * cursor, int pos);
+        T obtenerElemento(const Nodo * cursor, int pos) const;
 
         Nodo * crearNodo(T elem);
 
@@ -23,11 +23,13 @@ class Lista {
         // Destructor.
         ~Lista();
 
-        int logitud();
+        int logitud() const;
 
-        T obtener(int pos);
+        T obtener(int pos) const;
 
         void agregar(T elem, int pos);
+
+        void impirmir() const;
 
 
 

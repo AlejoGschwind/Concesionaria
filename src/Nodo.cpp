@@ -1,5 +1,6 @@
-#include "Nodo.h"
 #include <iostream>
+#include "Nodo.h"
+#include "Auto.h"
 
 using namespace std;
 
@@ -11,8 +12,7 @@ Nodo<T>::Nodo() {
 
 template <typename T>
 Nodo<T>::~Nodo() {
-    delete izq;
-    delete der;
 }
 
 template class Nodo<int>;
+template class Nodo<Auto>;

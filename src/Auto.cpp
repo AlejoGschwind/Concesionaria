@@ -7,17 +7,16 @@ using namespace std;
 Auto::Auto(){
 }
 
-Auto::Auto(int modelo, string marca, string patente, float precio, Lista<string> caracteristicas){
+Auto::Auto(int modelo, string marca, string patente, float precio, Lista<string> * lCarac){
   this->modelo = modelo;
   this->marca = marca;
   this->patente = patente;
   this->precio = precio;
-  this->caracteristicas = caracteristicas;
+  this->caracteristicas = lCarac;
 }
 
 // Destructor
 Auto::~Auto() {
-    caracteristicas.~Lista();
 }
 
 // Observadoras
@@ -37,10 +36,22 @@ float Auto::obtener_precio() const {
   return precio;
 }
 
-void Auto::listarCaracteristicas() {
+void Auto::listarCaracteristicas() const {
     cout << "\t..:Caracteristicas:.." << endl;
-    for (int i=0; i < caracteristicas.logitud(); i++)
-        cout << "\t\t- " << caracteristicas.obtener(i) << endl;
+    for (int i=0; i < (*caracteristicas).logitud(); i++)
+        cout << "\t- " << (*caracteristicas).obtener(i) << endl;
+}
+
+void Auto::imprimir() const {
+    cout << endl;
+    cout << "\t..:::::::::::::::::.." << endl;
+    cout << endl;
+    cout << "\t" << "Patente: " << patente << endl;
+    cout << "\t" << "Modelo: " << modelo << endl;
+    cout << "\t" << "Marca: " << marca << endl;
+    cout << "\t" << "Precio: " << precio << endl;
+    cout << endl;
+    (*this).listarCaracteristicas();
 }
 
 // Modificadoras
@@ -61,7 +72,7 @@ void Auto::modificar_precio(float precio) {
 }
 
 void Auto::agregarCaracteristica(string caracteristica) {
-    this->caracteristicas.agregar(caracteristica, caracteristicas.logitud());
+    (*caracteristicas).agregar(caracteristica, (*caracteristicas).logitud());
 }
 
 bool Auto::operator>=(const Auto & otroAuto) const {
@@ -75,5 +86,10 @@ bool Auto::operator<(const Auto & otroAuto) const {
 bool Auto::operator==(const Auto & otroAuto) const {
   return (patente == otroAuto.obtener_patente());
 };
+
+ostream& operator<<(ostream & os, const Auto & a) {
+    a.imprimir();
+    return os;
+}
 
 

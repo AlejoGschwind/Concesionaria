@@ -64,3 +64,53 @@
 	"Nodo.h"
 	<iostream>
 
+1590954101 source:/home/alejo/cpp/TPES/Concesionaria/src/Arbol.cpp
+	<iostream>
+	<typeinfo>
+	"Arbol.h"
+	"Auto.h"
+
+1590954081 /home/alejo/cpp/TPES/Concesionaria/include/Arbol.h
+	"Nodo.h"
+
+1590933708 /home/alejo/cpp/TPES/Concesionaria/include/Nodo.h
+
+1590951738 source:/home/alejo/cpp/TPES/Concesionaria/src/Auto.cpp
+	<iostream>
+	"Auto.h"
+	"Lista.h"
+
+1590950529 /home/alejo/cpp/TPES/Concesionaria/include/Auto.h
+	<iostream>
+	"Lista.h"
+
+1590946426 /home/alejo/cpp/TPES/Concesionaria/include/Lista.h
+
+1590948421 source:/home/alejo/cpp/TPES/Concesionaria/src/Lista.cpp
+	"Lista.h"
+	<iostream>
+	<cassert>
+
+1590940370 source:/home/alejo/cpp/TPES/Concesionaria/src/Nodo.cpp
+	<iostream>
+	"Nodo.h"
+	"Auto.h"
+
+1590953715 source:/home/alejo/cpp/TPES/Concesionaria/main.cpp
+	<iostream>
+	<fstream>
+	"Auto.h"
+	"Lista.h"
+	"Concesionaria.h"
+
+1590954253 source:/home/alejo/cpp/TPES/Concesionaria/src/Concesionaria.cpp
+	<iostream>
+	"Concesionaria.h"
+	"Auto.h"
+	"Nodo.h"
+
+1590954145 /home/alejo/cpp/TPES/Concesionaria/include/Concesionaria.h
+	"Auto.h"
+	"Arbol.h"
+	"Nodo.h"
+

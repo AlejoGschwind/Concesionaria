@@ -116,3 +116,65 @@
 	"Arbol.h"
 	"Nodo.h"
 
+1593116031 source:/home/alejo/conce/Concesionaria/main.cpp
+	<iostream>
+	<algorithm>
+	<fstream>
+	"Auto.h"
+	"Lista.h"
+	"Concesionaria.h"
+	"SegmentTree.h"
+
+1593048406 /home/alejo/conce/Concesionaria/include/Auto.h
+	<iostream>
+	"Lista.h"
+
+1593048567 /home/alejo/conce/Concesionaria/include/Lista.h
+
+1593048406 /home/alejo/conce/Concesionaria/include/Concesionaria.h
+	"Auto.h"
+	"Arbol.h"
+	"Nodo.h"
+
+1593048406 /home/alejo/conce/Concesionaria/include/Arbol.h
+	"Nodo.h"
+
+1593048406 /home/alejo/conce/Concesionaria/include/Nodo.h
+
+1593048406 source:/home/alejo/conce/Concesionaria/src/Arbol.cpp
+	<iostream>
+	<typeinfo>
+	"Arbol.h"
+	"Auto.h"
+
+1593048567 source:/home/alejo/conce/Concesionaria/src/Auto.cpp
+	<iostream>
+	"Auto.h"
+	"Lista.h"
+
+1593048567 source:/home/alejo/conce/Concesionaria/src/Lista.cpp
+	"Lista.h"
+	"Auto.h"
+	<iostream>
+	<cassert>
+
+1593048406 source:/home/alejo/conce/Concesionaria/src/Nodo.cpp
+	<iostream>
+	"Nodo.h"
+	"Auto.h"
+
+1593048567 source:/home/alejo/conce/Concesionaria/src/Concesionaria.cpp
+	<iostream>
+	"Concesionaria.h"
+	"Auto.h"
+	"Nodo.h"
+
+1593116061 /home/alejo/conce/Concesionaria/include/SegmentTree.h
+	"Auto.h"
+	"Lista.h"
+
+1593116646 source:/home/alejo/conce/Concesionaria/src/SegmentTree.cpp
+	"SegmentTree.h"
+	"Auto.h"
+	"Lista.h"
+

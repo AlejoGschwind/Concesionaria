@@ -11,6 +11,7 @@ Concesionaria::Concesionaria() {
 }
 
 Concesionaria::~Concesionaria() {
+    autos.~Arbol();
 }
 
 /// Privadas
@@ -40,9 +41,9 @@ bool Concesionaria::existeEnArbol(Nodo<Auto> * cursor, string patente) {
 /// Publicas
 
 void Concesionaria::agregarAuto(int modelo, string marca, string patente, float precio, Lista<string> * lCarac) {
-    Auto aAgregar(modelo, marca, patente, precio, lCarac);
+    Auto * a = new Auto(modelo, marca, patente, precio, lCarac);
 
-    Nodo<Auto> * agregado = autos.insertar(aAgregar);
+    Nodo<Auto> * agregado = autos.insertar((*a));
 
     if ( mayorPrecio == NULL )
         mayorPrecio = agregado;

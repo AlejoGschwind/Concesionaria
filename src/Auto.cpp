@@ -17,6 +17,7 @@ Auto::Auto(int modelo, string marca, string patente, float precio, Lista<string>
 
 // Destructor
 Auto::~Auto() {
+    //(*caracteristicas).~Lista();
 }
 
 // Observadoras

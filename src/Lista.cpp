@@ -1,4 +1,5 @@
 #include "Lista.h"
+#include "Auto.h"
 #include <iostream>
 #include <cassert>
 
@@ -7,6 +8,7 @@ using namespace std;
 template <typename T>
 Lista<T>::Lista() {
     primero = NULL;
+    cursor = NULL;
     cant = 0;
 }
 
@@ -114,7 +116,34 @@ T Lista<T>::obtener(int pos) const {
     return obtenerElemento(primero, pos);
 }
 
+
+/**
+ * Metodos para trabajar con la lista fuera de la clase.
+ * Inicializa el cursor en el primer elemento
+ */
+template <typename T>
+void Lista<T>::iniciar_cursor() {
+    cursor = primero;
+};
+
+/**
+ * Avanza una posicion con el cursor
+ */
+template <typename T>
+void Lista<T>::avanzar_cursor() {
+    cursor = cursor->sig;
+};
+
+/**
+ * Devuele el elemento al cual apunta el cursor.
+ */
+template <typename T>
+T Lista<T>::obtener_cursor() {
+    return cursor->elem;
+};
+
 template class Lista<string>;
+template class Lista<Auto>;
 
 
 

@@ -5,7 +5,6 @@
 		<Option title="trabajito" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="include/;src/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/trabajito" prefix_auto="1" extension_auto="1" />
@@ -37,16 +36,14 @@
 		</Compiler>
 		<Unit filename="include/Arbol.h" />
 		<Unit filename="include/Auto.h" />
-		<Unit filename="include/Lista.h">
-			<Option virtualFolder="src/" />
-		</Unit>
+		<Unit filename="include/Concesionaria.h" />
+		<Unit filename="include/Lista.h" />
 		<Unit filename="include/Nodo.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arbol.cpp" />
 		<Unit filename="src/Auto.cpp" />
-		<Unit filename="src/Lista.cpp">
-			<Option virtualFolder="src/" />
-		</Unit>
+		<Unit filename="src/Concesionaria.cpp" />
+		<Unit filename="src/Lista.cpp" />
 		<Unit filename="src/Nodo.cpp" />
 		<Extensions>
 			<code_completion />

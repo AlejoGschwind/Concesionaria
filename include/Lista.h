@@ -31,10 +31,15 @@ class Lista {
 
         void impirmir() const;
 
+        void iniciar_cursor();
 
+        void avanzar_cursor();
+
+        T obtener_cursor();
 
     private:
         Nodo * primero;
+        Nodo * cursor;
         int cant;
 };
 

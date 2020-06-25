@@ -1,0 +1,7 @@
+bin/
+obj/
+
+
+.concesionaria.cpp
+.concesionaria.depend
+.concesionaria.layout

@@ -28,7 +28,9 @@ class SegmentTree {
 
         Auto obtener_menor_precio(NodoS * izq, NodoS * der);
 
-        NodoS * busqueda_rangos(NodoS * raiz, unsigned int iIzq, unsigned int iDer);
+        void busqueda_rangos(NodoS * raiz, unsigned int iIzq, unsigned int iDer);
+
+        void mostrar_segment_tree(NodoS * cursor, int);
 
     public:
         SegmentTree(Lista<Auto> modelos[], int cantidad_modelos);
@@ -36,6 +38,7 @@ class SegmentTree {
         ~SegmentTree();
 
         void obtener_mayor_menor_precio_entre_modelos(unsigned int menor_modelo, unsigned int mayor_modelo);
+
 
 
 

@@ -24,12 +24,13 @@ int main() {
 
     procesar_archivo_entrada("autos.csv", modelos);
 
-
     SegmentTree s(modelos, CANTIDAD_MODELOS);
 
-    //s.obtener_mayor_menor_precio_entre_modelos(2000, 2001);
 
-    //mostrar_autos(modelos, 1); // Para Mostrar todos los modelos.
+    s.obtener_mayor_menor_precio_entre_modelos(2010, 2012);
+
+
+    //mostrar_autos(modelos, CANTIDAD_MODELOS); // Para Mostrar todos los modelos.
 
     /* PRIMERA PARTE
     Concesionaria c;

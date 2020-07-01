@@ -14,7 +14,10 @@ Lista<T>::Lista() {
 
 template <typename T>
 Lista<T>::~Lista() {
-    vaciarLista();
+    vaciarLista(primero);
+    if (primero != NULL) {
+        cout << "LPM" << endl;
+    }
 }
 
 /// Privados
@@ -23,7 +26,7 @@ Lista<T>::~Lista() {
  * Vacia la lista por compelo.
  */
 template <typename T>
-void Lista<T>::vaciarLista() {
+void Lista<T>::vaciarLista(Nodo *& p) {
     Nodo * cursor;
     while ( primero != NULL ) {
         cursor = primero->sig;
@@ -38,7 +41,7 @@ void Lista<T>::vaciarLista() {
  * (pos >=0 and <= cant)
  */
 template <typename T>
-void Lista<T>::insertarLista(Nodo *&cursor, Nodo * aAgregar, int pos) {
+void Lista<T>::insertarLista(Nodo *&cursor, Nodo * aAgregar, unsigned int pos) {
     if ( cursor == NULL or pos == 0 ) {
         aAgregar->sig = cursor;
         cursor = aAgregar;
@@ -65,7 +68,7 @@ void Lista<T>::impirmir() const {
  * (pos >=0 and < cant)
  */
 template <typename T>
-T Lista<T>::obtenerElemento(const Nodo * cursor, int pos) const {
+T Lista<T>::obtenerElemento(const Nodo * cursor, unsigned int pos) const {
     if ( pos == 0 )
         return cursor->elem;
     else
@@ -91,7 +94,7 @@ typename Lista<T>::Nodo * Lista<T>::crearNodo(T elem) {
  * Actualiza la logitud de la lista.
  */
 template <typename T>
-void Lista<T>::agregar(T elem, int pos) {
+void Lista<T>::agregar(T elem, unsigned int pos) {
     assert(pos>=0 and pos<= cant); /// Error: pos invalida.
     Nodo * aAgregar = crearNodo(elem);
     insertarLista(primero, aAgregar, pos);
@@ -102,7 +105,7 @@ void Lista<T>::agregar(T elem, int pos) {
  * Devuelve la logitud de la lista.
  */
 template <typename T>
-int Lista<T>::logitud() const {
+unsigned int Lista<T>::logitud() const {
     return cant;
 }
 
@@ -111,7 +114,7 @@ int Lista<T>::logitud() const {
  * Devuelve el elemento de la posicion pasada por paramentro.
  */
 template <typename T>
-T Lista<T>::obtener(int pos) const {
+T Lista<T>::obtener(unsigned int pos) const {
     assert(pos>=0 and pos< cant); /// Error: pos invalida.
     return obtenerElemento(primero, pos);
 }

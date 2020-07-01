@@ -41,9 +41,9 @@ Nodo<T> * Arbol<T>::insertarArbol(Nodo<T> *&cursor, Nodo<T> *&aAgregar) {
         return cursor;
     } else
         if ( cursor->elem >= aAgregar->elem )
-            insertarArbol(cursor->izq, aAgregar);
+            return insertarArbol(cursor->izq, aAgregar);
         else
-            insertarArbol(cursor->der, aAgregar);
+            return insertarArbol(cursor->der, aAgregar);
 }
 
 template <typename T>
@@ -75,5 +75,4 @@ Nodo<T> * Arbol<T>::obtenerRaiz() {
     return raiz;
 }
 
-template class Arbol<int>;
 template class Arbol<Auto>;

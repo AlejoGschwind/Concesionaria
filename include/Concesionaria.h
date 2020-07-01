@@ -26,7 +26,7 @@ class Concesionaria {
     private:
         Arbol<Auto> autos;
         Nodo<Auto> * mayorPrecio;
-        int cantidadAutos;
+        unsigned int cantidadAutos;
 };
 
 #endif // CONCESIONARIA_H

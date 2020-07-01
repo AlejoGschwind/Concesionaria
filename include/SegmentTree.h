@@ -11,29 +11,35 @@ class SegmentTree {
             Auto mayor_precio;
             Auto menor_precio;
 
-            int indice_menor;
-            int indice_mayor;
+            unsigned int indice_menor;
+            unsigned int indice_mayor;
 
             NodoS * izq;
             NodoS * der;
         };
 
-        Auto obtener_mayor_precio_arreglo(Lista<Auto> modelos[], int iIzq, int iDer);
+        void vaciar_ST(NodoS *& cursor);
 
-        Auto obtener_menor_precio_arreglo(Lista<Auto> modelos[], int iIzq, int iDer);
+        Auto obtener_mayor_precio_arreglo(Lista<Auto> modelos[], unsigned int iIzq, unsigned int iDer);
 
-        NodoS * construir_segment_tree(Lista<Auto> modelos[], NodoS * raiz, int iIzq, int iDer);
+        Auto obtener_menor_precio_arreglo(Lista<Auto> modelos[], unsigned int iIzq, unsigned int iDer);
+
+        NodoS * construir_segment_tree(Lista<Auto> modelos[], NodoS * raiz, unsigned int iIzq, unsigned int iDer);
 
         Auto obtener_mayor_precio(NodoS * izq, NodoS * der);
 
         Auto obtener_menor_precio(NodoS * izq, NodoS * der);
 
-        void busqueda_rangos(NodoS * raiz, unsigned int iIzq, unsigned int iDer);
+        void busqueda_rangos(NodoS * raiz, unsigned int iIzq, unsigned int iDer, Lista<Auto> & mayores, Lista<Auto> & menores);
 
-        void mostrar_segment_tree(NodoS * cursor, int);
+        void mostrar_segment_tree(NodoS * cursor, unsigned int nivel);
+
+        Auto mayor_lista(Lista<Auto> l);
+
+        Auto menor_lista(Lista<Auto> l);
 
     public:
-        SegmentTree(Lista<Auto> modelos[], int cantidad_modelos);
+        SegmentTree(Lista<Auto> modelos[], unsigned int cantidad_modelos);
 
         ~SegmentTree();
 
